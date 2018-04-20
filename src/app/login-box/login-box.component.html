@@ -1,7 +1,17 @@
-<div>
-    <h2>Ingrese Usuario: </h2>
-    <input type="text" [(ngModel)]="user"/>
-    <h2>Ingrese Pasword</h2>
-    <input type="password" [(ngModel)]="pass"/>
-    <button (click)="acceder()">Ingresar</button>
+<div class="horizontal-container contorno centrar">
+    <mat-form-field>
+        <textarea matInput placeholder="Ingrese Usuario" matTextareaAutosize matAutosizeMinRows="2"
+                  matAutosizeMaxRows="5" [(ngModel)]="user">
+        </textarea>
+    </mat-form-field>
+
+    <div class="example-container">
+            <mat-form-field>
+              <input matInput placeholder="Ingrese password" [type]="hide ? 'password' : 'text'" [(ngModel)]="pass">
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </mat-form-field>
+    </div>
+
+
+    <button mat-raised-button color="primary" (click)="acceder()">Ingresar</button>
 </div>
