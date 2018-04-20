@@ -1,5 +1,5 @@
 .horizontal-container{
-    height: 250px;
+    height: 350px;
     padding: 0;
     margin: 0;
     display: flex;
@@ -12,11 +12,16 @@
 }
 
 .contorno{
-    border: 1px solid rgb(3, 4, 90);
+    border: 5px solid #00008B;
     width: 350px;
+    border-radius: 10px 10px 10px 10px;
 }
 
 .boton{
     width:100px;
     height:19px;
+   }
+
+   .color{
+       background: 	#FFF8DC;
    }

@@ -4,11 +4,6 @@ import { Injectable } from "@angular/core";
 export class loginService{
     constructor(){}
     login(name: string, pass: string){
-        if(name==='uriel27' && pass==='123'){
-            return true;
-        }else{
-            return false;
-        }
-
+        return (name==='uriel27' && pass==='123');
     }
 }

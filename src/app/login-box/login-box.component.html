@@ -1,17 +1,18 @@
-<div class="horizontal-container contorno centrar">
-    <mat-form-field>
+<div class="horizontal-container contorno centrar color">
+<img matTooltip="icon" [matTooltipPosition]="position" src="http://www.accessories-india.com/images/login1.png" width="100" height="100">
+    <mat-form-field matTooltip="user" [matTooltipPosition]="position">
         <textarea matInput placeholder="Ingrese Usuario" matTextareaAutosize matAutosizeMinRows="2"
                   matAutosizeMaxRows="5" [(ngModel)]="user">
         </textarea>
     </mat-form-field>
 
     <div class="example-container">
-            <mat-form-field>
-              <input matInput placeholder="Ingrese password" [type]="hide ? 'password' : 'text'" [(ngModel)]="pass">
+            <mat-form-field matTooltip="password" [matTooltipPosition]="position">
+              <input matInput placeholder="Ingresar Contraseña" [type]="hide ? 'password' : 'text'" [(ngModel)]="pass">
               <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
             </mat-form-field>
     </div>
 
-
-    <button mat-raised-button color="primary" (click)="acceder()">Ingresar</button>
+    <button matTooltip="Log-In" [matTooltipPosition]="position" mat-raised-button color="primary" (click)="acceder()">Ingresar</button>
 </div>
+

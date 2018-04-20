@@ -8,7 +8,9 @@ import { Router } from "@angular/router";
     styleUrls: ['./login-box.component.css']
 })
 export class loginBoxComponent implements OnInit, OnDestroy {
+    position = 'before';
     user: string;
+    hide = true;
     pass: string;
     constructor(private _log: loginService, private _router: Router){}
     ngOnDestroy(){
@@ -16,9 +18,6 @@ export class loginBoxComponent implements OnInit, OnDestroy {
     ngOnInit(){
     }
     acceder(){
-        console.log(this._log.login(this.user,this.pass));
-        if(this._log.login(this.user,this.pass)==true){
-            this._router.navigate(['']);
-        }
+        this._log.login(this.user,this.pass) ? this._router.navigate(['']) : console.log("Error");
     }
 }
