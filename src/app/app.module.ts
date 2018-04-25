@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent, routes } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';//este es http client
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatToolbarModule,
@@ -54,12 +54,12 @@ export const MATERIAL_COMPONENTS = [
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MATERIAL_COMPONENTS,
-    FormsModule,
-    RouterModule.forRoot(routes)
+    FormsModule
   ],
   providers: [APP_PROVIDERS],
   bootstrap: [AppComponent]

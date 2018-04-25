@@ -12,13 +12,13 @@ export class loginBoxComponent implements OnInit, OnDestroy {
     user: string;
     hide = true;
     pass: string;
-    constructor(private _log: loginService, private _router: Router){}
+    constructor(public _log: loginService, public _router: Router){}
     ngOnDestroy(){
     }
     ngOnInit(){
     }
     acceder(){
-        this._log.login(this.user,this.pass) ? this._router.navigate(['contact']) : console.log("Error");
+        this._log.login(this.user,this.pass) ? this._router.navigate(['']) : console.log("Error");
     }
 }
 //guard elemento
