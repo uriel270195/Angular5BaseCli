@@ -20,7 +20,7 @@ module.exports = function (config) {
       fixWebpackSourcePaths: true
     },
     angularCli: {
-      environment: 'dev'
+      environment: 'dev'//modo de nivel de desarollo (dev)
     },
     reporters: ['progress', 'kjhtml'],
     port: 9876,
