@@ -58,6 +58,48 @@ describe('loginBoxComponent', () => {//encapsulado para pruebas unitarias
     //navigatespy
     const navigate = spyOn(component._router, 'navigate');
     component.acceder();
-    expect(navigate).toHaveBeenCalledWith([''])
+    expect(navigate).toHaveBeenCalledWith(['']);
+  });
+  it('should login whit alert error', ()=>{
+    component.user="xxxxx";
+    component.pass="xxxxx";
+    var alert = spyOn(window, 'alert');
+    component.acceder();
+    expect(alert).toHaveBeenCalledWith('Usuario o contraseña incorrecta');
+  });
+  it('should login in the view', ()=>{
+    component.user="uriel27";
+    component.pass="123";
+    const compiled = fixture.nativeElement;
+    const navigate = spyOn(component._router, 'navigate');
+    compiled.querySelector('button').click();
+    expect(navigate).toHaveBeenCalledWith(['']);
+  });
+  it('should login in the view whit alert error user and pass', ()=>{
+    component.user='xxxxx';
+    component.pass='xxxxx';
+    const compiled = fixture.nativeElement;
+    var alert = spyOn(window, 'alert');
+    compiled.querySelector('button').click();
+    expect(window.alert).toHaveBeenCalledWith('Usuario o contraseña incorrecta');
+  });
+  it('should login in the view whit alert error user', ()=>{
+    const compiled = fixture.nativeElement;
+    var alert = spyOn(window, 'alert');
+    compiled.querySelector('button').click();
+    expect(alert).toHaveBeenCalledWith('Ingresa Usuario');
+    component.user='';
+    compiled.querySelector('button').click();
+    expect(window.alert).toHaveBeenCalledWith('Ingresa Usuario');
+  });
+  it('should login in the view whit alert error password', ()=>{
+    component.user='xxxxx';
+    const compiled = fixture.nativeElement;
+    var alert = spyOn(window, 'alert'); 
+    compiled.querySelector('button').click();
+    expect(alert).toHaveBeenCalledWith('Ingresa Contraseña');
+    component.pass='';
+    compiled.querySelector('button').click();
+    expect(window.alert).toHaveBeenCalledWith('Ingresa Contraseña');
   });
 }); 

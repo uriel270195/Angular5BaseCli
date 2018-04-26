@@ -18,7 +18,13 @@ export class loginBoxComponent implements OnInit, OnDestroy {
     ngOnInit(){
     }
     acceder(){
-        this._log.login(this.user,this.pass) ? this._router.navigate(['']) : console.log("Error");
+        if(this.user==null || this.user==''){
+            alert('Ingresa Usuario');
+        }else if(this.pass==null || this.pass==''){
+            alert('Ingresa Contraseña');
+        }else{
+            this._log.login(this.user,this.pass) ? this._router.navigate(['']) : alert('Usuario o contraseña incorrecta');
+        }
     }
 }
 //guard elemento
