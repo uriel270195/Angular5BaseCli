@@ -1,0 +1,16 @@
+<div>
+    <p>Nombre:</p>
+    <input type="text" [(ngModel)]="nombre"/>
+    <p>Usuario:</p>
+    <input type="text"/>
+    <p>Contraseña:</p>
+    <input type="password"/>
+    <p>Confirmar contraseña Contraseña:</p>
+    <input type="password"/>
+    <p>Correo:</p>
+    <input type="text"/>
+    <input type="checkbox" id="myCheck">
+    <p>Aceptar terminos y condiciones</p>
+    <button matTooltip="Submit" [matTooltipPosition]="position" mat-raised-button color="primary" (click)="acceder()">Registrarse</button>
+</div>
+

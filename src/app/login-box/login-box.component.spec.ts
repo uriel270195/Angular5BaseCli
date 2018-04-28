@@ -17,6 +17,8 @@ import { PasivoComponent } from '../pasivo/pasivo.component';
 import { ReactivoComponent } from '../reactivo/reactivo.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { Component } from '@angular/core';
+import { registroBoxComponent } from '../registro-box/registro-box.component';
+import { registroComponent } from '../registro/reistro.component';
 describe('loginBoxComponent', () => {//encapsulado para pruebas unitarias
   let component: loginBoxComponent;//declaracion de variables
   let fixture: ComponentFixture<loginBoxComponent>;
@@ -31,6 +33,8 @@ describe('loginBoxComponent', () => {//encapsulado para pruebas unitarias
       GitHubCardComponent,
       AboutComponent,
       ContactComponent,
+      registroBoxComponent,
+      registroComponent,
       loginComponent ],
       imports: [MATERIAL_COMPONENTS,
         FormsModule,

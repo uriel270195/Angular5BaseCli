@@ -14,6 +14,8 @@ import { MATERIAL_COMPONENTS } from './app.module';
 import { RouterModule } from '@angular/router';
 import { loginComponent } from "./login/login.component";
 import { loginBoxComponent } from "./login-box/login-box.component";
+import { registroComponent } from './registro/reistro.component';
+import { registroBoxComponent } from './registro-box/registro-box.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,7 +29,9 @@ describe('AppComponent', () => {
         SearchUserComponent,
         PasivoComponent,
         ReactivoComponent,
-        loginBoxComponent
+        loginBoxComponent,
+        registroComponent,
+        registroBoxComponent
       ],
 
       imports:[FormsModule,

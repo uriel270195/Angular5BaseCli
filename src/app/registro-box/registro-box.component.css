@@ -1,0 +1,27 @@
+.horizontal-container{
+    height: 350px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.centrar{
+    justify-content: center;
+}
+
+.contorno{
+    border: 5px solid #00008B;
+    width: 350px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.boton{
+    width:100px;
+    height:19px;
+   }
+
+   .color{
+       background: 	#FFF8DC;
+   }

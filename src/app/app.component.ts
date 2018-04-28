@@ -4,6 +4,7 @@ import { MainComponent } from './main/main.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { loginComponent } from './login/login.component';
+import { registroComponent } from './registro/reistro.component';
 
 @Component({
   selector: 'app-root',
@@ -30,5 +31,9 @@ export const routes: Routes = [
   { 
     path: 'login', 
     component: loginComponent
+  },
+  { 
+    path: 'registro', 
+    component: registroComponent
   }
 ];

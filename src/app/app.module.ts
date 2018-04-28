@@ -26,6 +26,8 @@ import { loginComponent } from "./login/login.component";
 import { loginBoxComponent } from "./login-box/login-box.component";
 import {MatSelectModule} from '@angular/material/select';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { registroComponent } from './registro/reistro.component';
+import { registroBoxComponent } from './registro-box/registro-box.component';
 
 export const MATERIAL_COMPONENTS = [
   MatToolbarModule,
@@ -50,7 +52,9 @@ export const MATERIAL_COMPONENTS = [
     PasivoComponent,
     ReactivoComponent,
     loginComponent,
-    loginBoxComponent
+    loginBoxComponent,
+    registroComponent,
+    registroBoxComponent
   ],
   imports: [
     BrowserModule,
