@@ -60,13 +60,13 @@ describe('registroBoxComponent', () => {//encapsulado para pruebas unitarias
       component.user="uriel27";
       component.confpass="M2m";
       component.pass="M2m";
-      component.correo="irvin.aguilar@axity.com";
+      component.correo="irvin27@axity.com";
       component.terminos_codiciones=true;
       var alert = spyOn(window, 'alert');
       component.acceder();
       expect(alert).toHaveBeenCalledWith('Ok');
   });
-  it('should validate error', ()=>{
+  it('should validate error nombre', ()=>{
     component.nombre="irvin27";
     component.user="uri";
     component.confpass="123";
@@ -75,44 +75,44 @@ describe('registroBoxComponent', () => {//encapsulado para pruebas unitarias
     component.terminos_codiciones=false;
     var alert = spyOn(window, 'alert');
     component.acceder();
-    expect(alert).toHaveBeenCalledWith('Error');
+    expect(alert).toHaveBeenCalledWith('Error Nombre');
   });
-  it('should validate error submit', ()=>{
+  it('should validate error submit terminos y condiciones', ()=>{
     component.nombre="irvin uriel aguilar cosme";
     component.user="uriel27";
     component.confpass="M2m";
     component.pass="M2m";
-    component.correo="irvin.aguilar@axity.com";
+    component.correo="aguilar@axity.com";
     component.terminos_codiciones=false;
     var alert = spyOn(window, 'alert');
     component.acceder();
-    expect(alert).toHaveBeenCalledWith('Error');
+    expect(alert).toHaveBeenCalledWith('Error Terminos y Condiciones');
 });
-it('should validate in the view', ()=>{
+it('should validate error in the view terminos y condiciones', ()=>{
   component.nombre="irvin uriel aguilar cosme";
   component.user="uriel27";
   component.confpass="M2m";
   component.pass="M2m";
-  component.correo="irvin.aguilar@axity.com";
+  component.correo="irvinaguilar@axity.com";
   component.terminos_codiciones=false;
   const compiled = fixture.nativeElement;
   var alert = spyOn(window, 'alert'); 
   compiled.querySelector('button').click();
-  expect(alert).toHaveBeenCalledWith('Error');
+  expect(alert).toHaveBeenCalledWith('Error Terminos y Condiciones');
 });
   it('should validate in the view', ()=>{
     component.nombre="irvin uriel aguilar cosme";
     component.user="uriel27";
     component.confpass="M2m";
     component.pass="M2m";
-    component.correo="irvin.aguilar@axity.com";
+    component.correo="aguilar@axity.com";
     component.terminos_codiciones=true;
     const compiled = fixture.nativeElement;
     var alert = spyOn(window, 'alert'); 
     compiled.querySelector('button').click();
     expect(alert).toHaveBeenCalledWith('Ok');
   });
-  it('should validate Error in the view', ()=>{
+  it('should validate Error Nombre in the view', ()=>{
     component.nombre="irvin27";
     component.user="uri";
     component.confpass="123";
@@ -122,7 +122,7 @@ it('should validate in the view', ()=>{
     const compiled = fixture.nativeElement;
     var alert = spyOn(window, 'alert'); 
     compiled.querySelector('button').click();
-    expect(alert).toHaveBeenCalledWith('Ok');
+    expect(alert).toHaveBeenCalledWith('Error Nombre');
   });
 }); 
 //80

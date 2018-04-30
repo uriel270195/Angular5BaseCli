@@ -28,6 +28,6 @@ export class AboutComponent implements OnInit {
             console.error(err);
             this._data.setIsLoadingEvent(false);
         })
-}
+    }
 
 }
