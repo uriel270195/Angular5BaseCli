@@ -15,7 +15,6 @@ export class registroBoxComponent implements OnInit, OnDestroy {
     confpass: string;
     correo: string;
     terminos_codiciones: boolean;
-    boleano: boolean;
 
     constructor(){}
     ngOnDestroy(){
@@ -37,43 +36,18 @@ export class registroBoxComponent implements OnInit, OnDestroy {
             //this._log.login(this.user,this.pass) ? alert("Ok") : alert('Error');
     }
     validarNombre(nom: string){
-        let pos=1;
-        Observable.from(nom).map(x=>{
-            console.log(x+" "+x.charCodeAt(0)+"\n");
-            let val=x.charCodeAt(0);
-            if(val<65 || val>90){
-                if(val<97 || val>122){
-                    if(val!=32){
-                        this.boleano=false;
-                        return this.boleano;
-                    }
-                }
-            }
-            this.boleano=true;
-            return this.boleano
-        }).subscribe(x=>{
-            console.log(x);
-            return x!=false;
-        });  
-        return this.boleano;
+        var nombre=/^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+        if(nombre.test(nom) && nom!=null){
+            return true
+        }
+        return false;
     }
     validarUser(us: string){
-        if(us.length <5 || us.length >15){
-            return false
+        var usuario=/^[a-z0-9_\\_\ü]+$/;
+        if(usuario.test(us) && us!=null){
+            return true
         }
-        let pos=1;
-        for (let i = 0; i < us.length; i++) {
-            let valor=us.substring(i,pos).charCodeAt(0);
-            if(valor<65 || valor>90){
-                if(valor<97 || valor>122){
-                    if(valor<48 || valor>57){
-                        return false;
-                    }
-                }
-            }
-            pos++;
-        }
-        return true
+        return false;
     }
     validarPassword(pas: string){
         if(pas.length <2 ){
